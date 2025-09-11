@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useState } from "react";
+import type React from "react";
+import { useState } from "react";
 import Image from "next/image";
 import { Lens } from "@/components/magicui/lens";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
@@ -53,7 +54,7 @@ export const ModalImageLens: React.FC<ModalImageLensProps> = ({
 	const [open, setOpen] = useState(false);
 
 	return (
-		<div className={"group relative overflow-hidden rounded-lg " + className}>
+		<div className={`group relative overflow-hidden rounded-lg ${className}`}>
 			{/* Inline Lens */}
 			<button
 				type="button"
@@ -99,7 +100,7 @@ export const ModalImageLens: React.FC<ModalImageLensProps> = ({
 
 			{/* Modal with animated content */}
 			<Dialog open={open} onOpenChange={setOpen}>
-				<DialogContent className="data-[state=open]:animate-in data-[state=open]:zoom-in-95 data-[state=closed]:animate-out data-[state=closed]:zoom-out-95 data-[state=open]:fade-in-0 data-[state=closed]:fade-out-0 border-0 bg-transparent p-0 shadow-none max-w-[96vw] w-auto fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+				<DialogContent className="data-[state=open]:zoom-in-95 data-[state=closed]:zoom-out-95 data-[state=open]:fade-in-0 data-[state=closed]:fade-out-0 -translate-x-1/2 -translate-y-1/2 fixed top-1/2 left-1/2 w-auto max-w-[96vw] border-0 bg-transparent p-0 shadow-none data-[state=closed]:animate-out data-[state=open]:animate-in">
 					<div className="relative mx-auto max-h-[90vh] max-w-[92vw]">
 						<Lens
 							zoomFactor={Math.max(zoomFactor, 1.8)}
@@ -120,7 +121,7 @@ export const ModalImageLens: React.FC<ModalImageLensProps> = ({
 						</Lens>
 						<button
 							type="button"
-							className="absolute right-2 top-2 rounded-full bg-white/90 p-2 text-black shadow hover:bg-white"
+							className="absolute top-2 right-2 rounded-full bg-white/90 p-2 text-black shadow hover:bg-white"
 							aria-label="Close"
 							onClick={() => setOpen(false)}
 						>

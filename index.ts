@@ -1,1 +1,1 @@
-export * from "./ModalImageLens";
+export { default as ModalImageLens } from './ModalImageLens';
