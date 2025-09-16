@@ -107,7 +107,7 @@ export const ModalImageLens: React.FC<ModalImageLensProps> = ({
 							lensSize={Math.max(lensSize, 220)}
 							ariaLabel="Zoom area"
 						>
-							<div className="relative h-[70vh] w-[82vw] bg-black">
+							<div className="relative h-[70vh] w-[82vw] bg-background">
 								<Image
 									src={src}
 									alt={alt}
@@ -121,7 +121,7 @@ export const ModalImageLens: React.FC<ModalImageLensProps> = ({
 						</Lens>
 						<button
 							type="button"
-							className="absolute top-2 right-2 rounded-full bg-white/90 p-2 text-black shadow hover:bg-white"
+							className="absolute right-2 top-2 rounded-full bg-card/90 p-2 text-card-foreground shadow hover:bg-card"
 							aria-label="Close"
 							onClick={() => setOpen(false)}
 						>
